@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library - Books</title>
+  <link rel="stylesheet" href="books.css"> 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="library-container">
+  
+    <h1>LIBRARY</h1>
+
+    
+    <nav class="menu">
+      <a href="books.html">Books</a>
+      <a href="visitors.html">Visitors</a>
+      <a href="cards.html">Cards</a>
+      <a href="statistics.html">Statistics</a>
+    </nav>
+
+  
+    <div class="content-section">
+      
+      <div class="section-header">
+        <h2>ALL BOOKS:</h2>
+        <button class="btn" onclick="openNewBookModal()">New Book</button>
+      </div>
+
+      
+      <div class="controls">
+        <span>Sort by:</span>
+        <select id="sortBy">
+          <option value="id">ID</option>
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="copies">Copies</option>
+          <option value="pages">Pages</option> 
+        </select>
+        <input type="text" id="searchInput" placeholder="Search">
+      </div>
+
+      
+      <table class="books-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Copies</th>
+            <th>Pages</th> 
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- buraya gelcek -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div id="newBookModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>New Book</h2>
+      <form id="addBookForm">
+        <div class="form-group">
+          <label for="bookTitle">Title:</label>
+          <input type="text" id="bookTitle" placeholder="Enter title" required>
+        </div>
+        <div class="form-group">
+          <label for="bookAuthor">Author:</label>
+          <input type="text" id="bookAuthor" placeholder="Enter author" required>
+        </div>
+        <div class="form-group">
+          <label for="bookPublisher">Publisher:</label>
+          <input type="text" id="bookPublisher" placeholder="Enter publisher" required>
+        </div>
+        <div class="form-group">
+          <label for="bookCopies">Copies:</label>
+          <input type="number" id="bookCopies" placeholder="Enter copies" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="bookPages">Pages:</label> <!-- Sayfa sayısı inputu -->
+          <input type="number" id="bookPages" placeholder="Enter pages" min="1" required>
+        </div>
+        <button type="submit" class="btn">Add Book</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Edit Book</h2>
+      <form id="editBookForm">
+        <div class="form-group">
+          <label for="editTitle">Title:</label>
+          <input type="text" id="editTitle" placeholder="Enter title" required>
+        </div>
+        <div class="form-group">
+          <label for="editAuthor">Author:</label>
+          <input type="text" id="editAuthor" placeholder="Enter author" required>
+        </div>
+        <div class="form-group">
+          <label for="editPublisher">Publisher:</label>
+          <input type="text" id="editPublisher" placeholder="Enter publisher" required>
+        </div>
+        <div class="form-group">
+          <label for="editCopies">Copies:</label>
+          <input type="number" id="editCopies" placeholder="Enter copies" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="editPages">Pages:</label> 
+          <input type="number" id="editPages" placeholder="Enter pages" min="1" required>
+        </div>
+        <button type="submit" class="btn">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="deleteConfirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Kitabı Sil</h2>
+      <p>Bu kitabı silmek istediğinizden emin misiniz?</p>
+      <div class="modal-actions">
+        <button class="btn btn-cancel" onclick="closeModal()">İptal</button>
+        <button class="btn btn-confirm" onclick="confirmDelete()">Sil</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="toast" class="toast">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script src="books.js"></script> <
+</body>
+</html>

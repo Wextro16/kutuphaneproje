@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library - Cards</title>
+  <link rel="stylesheet" href="cards.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="library-container">
+    <h1>LIBRARY</h1>
+
+    
+    <nav class="menu">
+      <a href="books.html">Books</a>
+      <a href="visitors.html">Visitors</a>
+      <a href="cards.html">Cards</a>
+      <a href="statistics.html">Statistics</a>
+    </nav>
+
+   
+    <div class="content-section">
+     
+      <div class="section-header">
+        <h2>ALL CARDS:</h2>
+        <button class="btn" onclick="openNewCardModal()">New Card</button>
+      </div>
+
+      <div class="controls">
+        <span>Filter by:</span>
+        <select id="filterBy">
+          <option value="borrowDate">Borrow Date</option>
+          <option value="returnDate">Return Date</option>
+          <option value="id">ID</option> 
+        </select>
+        <input type="date" id="filterDate" placeholder="Select Date">
+        <input type="text" id="filterId" placeholder="Enter ID" style="display: none;"> <!-- Yeni input -->
+        <input type="text" id="searchInput" placeholder="Search by Visitor or Book" style="margin-left: auto;">
+      </div>
+
+
+      
+      <table class="cards-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Visitor</th>
+            <th>Book</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- buraya eklencek -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+  <div id="newCardModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>New Card</h2>
+      <form id="addCardForm">
+        <div class="form-group">
+          <label for="visitorSelect">Visitor:</label>
+          <select id="visitorSelect" required>
+            <!-- buraya  eklenecek -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bookSelect">Book:</label>
+          <select id="bookSelect" required>
+            <!-- buraya  eklenecek -->
+          </select>
+        </div>
+        <button type="submit" class="btn">Create Card</button>
+      </form>
+    </div>
+  </div>
+
+
+<div id="returnModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Return Date</h2>
+    <form id="returnBookForm">
+      <p>Are you sure you want to return this book?</p>
+      <button type="submit" class="btn">Return Date</button>
+    </form>
+  </div>
+</div>
+
+  
+  <div id="toast" class="toast">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script src="cards.js"></script> 
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library - Statistics</title>
+  <link rel="stylesheet" href="statistics.css"> 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="library-container">
+  
+    <h1>LIBRARY</h1>
+
+   
+    <nav class="menu">
+      <a href="books.html">Books</a>
+      <a href="visitors.html">Visitors</a>
+      <a href="cards.html">Cards</a>
+      <a href="statistics.html">Statistics</a>
+    </nav>
+
+    <!-- İstatistikler Bölümü İçeriği -->
+    <div class="content-section">
+      <!-- En Çok Alınan Kitaplar -->
+      <div class="section-header">
+        <h2>En Çok Alınan Kitaplar</h2>
+      </div>
+      <table class="books-table" id="popularBooksTable">
+        <thead>
+          <tr>
+            <th>Kitap Adı</th>
+            <th>Yazar</th>
+            <th>Ödünç Alma Sayısı</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- istatikler -->
+        </tbody>
+      </table>
+
+      <!-- En Çok Kitap Alan Ziyaretçiler -->
+      <div class="section-header">
+        <h2>En Çok Kitap Alan Ziyaretçiler</h2>
+      </div>
+      <table class="books-table" id="activeVisitorsTable">
+        <thead>
+          <tr>
+            <th>Ziyaretçi Adı</th>
+            <th>Toplam Ödünç Alma Sayısı</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- istatikler -->
+        </tbody>
+      </table>
+
+      <!-- En Uzun Süre Ödünçte Kalan Kitaplar -->
+      <div class="section-header">
+        <h2>En Uzun Süre Ödünçte Kalan Kitaplar</h2>
+      </div>
+      <table class="books-table" id="longestBorrowedBooksTable">
+        <thead>
+          <tr>
+            <th>Kitap Adı</th>
+            <th>Yazar</th>
+            <th>Ödünçte Kalma Süresi (Gün)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- istatikler -->
+        </tbody>
+      </table>
+
+      <!-- En Az Ödünç Alınan Kitaplar -->
+      <div class="section-header">
+        <h2>En Az Ödünç Alınan Kitaplar</h2>
+      </div>
+      <table class="books-table" id="leastBorrowedBooksTable">
+        <thead>
+          <tr>
+            <th>Kitap Adı</th>
+            <th>Yazar</th>
+            <th>Ödünç Alma Sayısı</th>
+          </tr>
+        </thead>
+        <tbody>
+         <!-- istatikler gelicek -->
+        </tbody>
+      </table>
+
+      <!-- ödünc alma -->
+      <div class="section-header">
+        <h2>Aylık Ödünç Alma İstatistikleri</h2>
+      </div>
+      <table class="books-table" id="monthlyBorrowStatsTable">
+        <thead>
+          <tr>
+            <th>Ay</th>
+            <th>Ödünç Alma Sayısı</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- istatikler gelicek -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="statistics.js"></script> 
+</body>
+</html>

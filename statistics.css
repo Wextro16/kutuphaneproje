@@ -1,0 +1,245 @@
+* {
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ece8e8;
+    margin: 0;
+    padding: 0;
+}
+
+.library-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: left;
+    color: #0ba38f;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #323131;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.menu a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background-color: #fff;
+}
+
+.menu a:hover {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #0ba38f;
+}
+
+
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+}
+
+.books-table th,
+.books-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.books-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.books-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.toast.success {
+    background-color: #28a745; 
+}
+
+.toast.error {
+    background-color: #dc3545; 
+}
+
+.toast.info {
+    background-color: #17a2b8; 
+}
+
+@keyframes fadein {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 20px; opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { bottom: 20px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+}
+
+
+@media (max-width: 768px) {
+    .library-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu a {
+        margin: 5px 0;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        margin-bottom: 10px;
+    }
+
+    .books-table th,
+    .books-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .toast {
+        width: 90%;
+        right: 5%;
+        bottom: 10px;
+    }
+}
